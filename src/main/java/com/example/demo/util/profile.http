@@ -1,0 +1,24 @@
+POST http://localhost:8081/api/users
+Content-Type: application/json
+Accept-Language: en
+
+{
+  "id": 5,
+  "name": "valish",
+  "email": "ggg@gmail.com",
+  "age": 13
+}
+
+########
+GET localhost:8081/api/users/5
+
+###
+DELETE localhost:8081/api/users/delete/4
+
+###
+PUT localhost:8081/api/users/update/5
+Content-Type: application/json
+
+{
+  "name": "ali"
+}
