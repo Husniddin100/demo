@@ -1,7 +1,10 @@
 package com.example.demo.entity;
 
+import com.example.demo.enums.UserEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -18,8 +21,11 @@ public class UserEntity implements Serializable {
   private Long id;
   @Column
   private String name;
-  @Column
+  @Column(unique = true, nullable = false)
   private String email;
   @Column
   private Integer age;
+  @Enumerated(EnumType.STRING)
+  private UserEnum role;
+
 }

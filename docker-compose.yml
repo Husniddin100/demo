@@ -10,5 +10,16 @@ services:
       - redis_data:/data
     restart: always
 
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0
+    container_name: demo-keycloak
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    command: start-dev
+    restart: always
+
 volumes:
   redis_data:

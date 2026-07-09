@@ -15,6 +15,7 @@ public class UserHistoryService {
     this.redisTemplate = redisTemplate;
   }
 
+
   public void addProductToHistory(Long userId, String productName) {
     String redisKey = "user:history:" + userId;
 
