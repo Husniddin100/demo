@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-import com.example.demo.enums.UserEnum;
+import com.example.demo.enums.UserRole;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -25,7 +25,8 @@ public class UserEntity implements Serializable {
   private String email;
   @Column
   private Integer age;
+
   @Enumerated(EnumType.STRING)
-  private UserEnum role;
+  private UserRole role;
 
 }

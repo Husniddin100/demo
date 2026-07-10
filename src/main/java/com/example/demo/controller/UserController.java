@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.UserProfileDto;
 import com.example.demo.service.UserProfileCacheService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +27,7 @@ public class UserController {
     cacheService.cacheUserProfile(profile);
     return "Profil Redis-ga muvaffaqiyatli yozildi!";
   }
-
+  @PreAuthorize("hasAnyRole('admin','user')")
   @GetMapping("/{id}")
   public UserProfileDto getProfile(@PathVariable Long id) {
     return cacheService.getUserProfile(id);

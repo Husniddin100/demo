@@ -26,6 +26,7 @@ public class UserProfileCacheService {
     entity.setName(dto.getName());
     entity.setEmail(dto.getEmail());
     entity.setAge(dto.getAge());
+    entity.setRole(dto.getRole());
 
     UserEntity savedEntity = userRepository.save(entity);
 
